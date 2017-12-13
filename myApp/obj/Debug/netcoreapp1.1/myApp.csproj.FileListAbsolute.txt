@@ -7,3 +7,12 @@
 /Users/zcl/Desktop/netcore/myApp/obj/Debug/netcoreapp1.1/myApp.AssemblyInfo.cs
 /Users/zcl/Desktop/netcore/myApp/obj/Debug/netcoreapp1.1/myApp.dll
 /Users/zcl/Desktop/netcore/myApp/obj/Debug/netcoreapp1.1/myApp.pdb
+/Users/zcl/Desktop/Documents/Algorithm/myApp/bin/Debug/netcoreapp1.1/myApp.deps.json
+/Users/zcl/Desktop/Documents/Algorithm/myApp/bin/Debug/netcoreapp1.1/myApp.runtimeconfig.json
+/Users/zcl/Desktop/Documents/Algorithm/myApp/bin/Debug/netcoreapp1.1/myApp.runtimeconfig.dev.json
+/Users/zcl/Desktop/Documents/Algorithm/myApp/obj/Debug/netcoreapp1.1/myApp.csproj.CoreCompileInputs.cache
+/Users/zcl/Desktop/Documents/Algorithm/myApp/obj/Debug/netcoreapp1.1/myApp.AssemblyInfo.cs
+/Users/zcl/Desktop/Documents/Algorithm/myApp/obj/Debug/netcoreapp1.1/myApp.dll
+/Users/zcl/Desktop/Documents/Algorithm/myApp/obj/Debug/netcoreapp1.1/myApp.pdb
+/Users/zcl/Desktop/Documents/Algorithm/myApp/bin/Debug/netcoreapp1.1/myApp.dll
+/Users/zcl/Desktop/Documents/Algorithm/myApp/bin/Debug/netcoreapp1.1/myApp.pdb

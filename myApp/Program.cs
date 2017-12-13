@@ -10,14 +10,8 @@ namespace myApp
 
         static void Main(string[] args)
         {
-             Node node = LinkedManager.ReverseLinkedNode( LinkedManager.GetNode("a,b,c,d,e"));
-
-            while(node != null)
-            {
-                System.Console.Write(node.data);
-                node = node.Next;
-            }
-           
+            Sort.Test();
+           // HeapHelp.BuildMarxHeap();
         }
 
       static string GetBinary(int input)
