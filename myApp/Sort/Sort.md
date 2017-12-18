@@ -1,42 +1,8 @@
-using System.Text;
+![排序](./sort.jpg)
 
-public class Sort
-{
-   public static void Test()
-    {
-        int[] a = {5,8,1,9,3,5,7,1,2};
-        Print(a);
-        System.Console.WriteLine("Bubble sort: T=O(n^2)");
-        BubbleSort(a);
-        Print(a);
-        int[] b = {5,8,1,9,3,5,7,1,2};
+# 冒泡排序
 
-        System.Console.WriteLine("Simple selection sort: T=O(n^2), swap count less than bubble sort.");
-        SimpleSelectionSort(b);
-        Print(b);
-
-        Heap.BuildMarxHeap();
-        System.Console.WriteLine("Heap sort: T= O(nlogn), better for big number");
-
-        b = new int[]{5,8,1,9,3,5,7,1,2};
-        InsertionSort(b);
-        System.Console.WriteLine("Insert sort: T= O(n^2), better for big number");
-        
-        Print(b);
-        System.Console.WriteLine("Quick Sort O(nlogn)");
-        b = new int[]{5,8,1,9,3,5,7,1,2};
-    
-        QuickSort(b);
-        Print(b);        
-        System.Console.WriteLine("Shell Sort O(nlogn)");
-        b = new int[]{5,8,1,9,3,5,7,1,2};
-    
-        ShellShort(b);
-        Print(b);
-    }
-    
-    //
-    // Bubble sort  T = O(n^2)
+```
     public static void BubbleSort(int[] a)
     {
         for (int i = 0; i < a.Length -1; i++)
@@ -51,9 +17,11 @@ public class Sort
             }
         }
     }
+```
 
-    // Simple select sort T = O(n^2), swap time is less than bubble sort
-    public static void SimpleSelectionSort(int[] a)
+# 选择排序
+```
+ public static void SimpleSelectionSort(int[] a)
     {
 
         int min, minIndex;
@@ -79,41 +47,10 @@ public class Sort
         }
     }
 
+```
 
-    #region Shell Sort
-
-
-public static void ShellShort(int[] a)
-{
-    int d = a.Length/2;
-    while(d >= 1)
-    {
-        InsertionSort(a, d);
-        d/=2;
-    }
-}
-
-public static void InsertionSort(int[] a, int d)
-    {
-        for (int i = d; i < a.Length; i=i+d)
-        {
-            int j = i;
-            int target = a[j];
-
-            while(j-d >=0 && a[j-d] > target)
-            {
-                a[j] = a[j-d];
-                j-=d;
-            }
-
-           
-            a[j] = target;
-        }
-        
-    }
-    #endregion
-
-    // O(n^2)
+# 插入排序
+```
     public static void InsertionSort(int[] a)
     {
         for (int i = 1; i < a.Length; i++)
@@ -131,8 +68,42 @@ public static void InsertionSort(int[] a, int d)
         }
         
     }
+```
+# 希尔排序
+```
+public static void ShellShort(int[] a)
+{
+    int d = a.Length/2;
+    while(d >= 1)
+    {
+        InsertionSort(a, d);
+        d/=2;
+    }
+}
 
-    public static void QuickSort(int[] a)
+    public static void InsertionSort(int[] a, int d)
+    {
+        for (int i = d; i < a.Length; i=i+d)
+        {
+            int j = i;
+            int target = a[j];
+
+            while(j-d >=0 && a[j-d] > target)
+            {
+                a[j] = a[j-d];
+                j-=d;
+            }
+
+           
+            a[j] = target;
+        }
+        
+    }
+```
+# 快速排序
+
+```
+ public static void QuickSort(int[] a)
     {
         QuickSort(a, 0, a.Length-1);
     }
@@ -174,20 +145,62 @@ public static void InsertionSort(int[] a, int d)
 
         return left;
     }
-
- public static void Print(int[] a)
+```
+# 堆排序
+```
+ public static int[] BuildMarxHeap()
     {
-        StringBuilder builder = new StringBuilder();
-       for (int i = 0; i < a.Length; i++)
-       {
-           if(builder.Length == 0) builder.Append(a[i]);
-           else
-           {
-               builder.Append(",").Append(a[i]);
-           }
+      //  System.Console.WriteLine("Input the array");
+        string input = "5,8,1,9,3,5,7,1,2";
+        int [] a = input.Split(',').Select(i=>int.Parse(i)).ToArray();
+        
+
+        for(int i = a.Length/2; i>=0; i --)
+        {
+            BuildMarxHeap(a,i);
         }
 
-       System.Console.WriteLine(builder.ToString());
+        return a;
     }
 
-}
+    public static void BuildMarxHeap(int[] a, int i)
+    {
+        int l = Left(i);
+        int r = Right(i);
+        int largest = i;
+       // System.Console.WriteLine("index is "+ i);
+        if(l < a.Length && a[l] > a[i])
+        {
+            largest = l;
+        }
+       
+        if(r <a.Length && a[r] > a[largest])
+        {
+            largest = r;
+        }
+
+        if(largest != i)
+        {
+           int temp = a[i];
+           a[i] = a[largest];
+           a[largest] = temp;
+           //PrintHeap(a);
+           BuildMarxHeap(a,largest);
+        }
+    }
+
+    public static int Left(int i)
+    {
+        var res = (i << 1) + 1;
+        return res;
+    }
+
+    public static int Right(int i)
+    {
+        var res = (i << 1) + 2;
+        return res;
+    }
+
+```
+
+

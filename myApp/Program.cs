@@ -10,7 +10,12 @@ namespace myApp
 
         static void Main(string[] args)
         {
-            Sort.Test();
+             Sort.Test();
+             
+            System.Console.WriteLine();
+            Console.Read();
+        
+         //   Sort.Test();
            // HeapHelp.BuildMarxHeap();
         }
 
